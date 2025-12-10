@@ -190,8 +190,10 @@ Edited by \[First name\]\[Last name\]
 # consider with this approach is that if you leave NOAA, readers will be unable
 # to request the data from you.
 ```
-The code used to generate this data report is publicly available on GitHub at:
-<https://github.com/noaa-pifsc/FY22-ESD-PRP-CR-TDR-DataReport>.  
+The code used to generate this data report text is publicly available on GitHub 
+at: <https://github.com/noaa-pifsc/FY22-ESD-PRP-CR-TDR-DataReport>. Code used 
+to generate data report figures and summary statistics is publicly available on
+GitHub at: <https://github.com/JohannaWren/CooperativeResearchTDR>.
  
 The data covered in this publication are publicly accessible and archived at: 
 <insert NCEI URL here>. Metadata can be found at <https://www.fisheries.noaa.gov/inport/item/75984>.  
