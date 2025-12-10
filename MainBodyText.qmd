@@ -91,7 +91,7 @@ valuable commercial fishery.
 
 knitr::include_graphics("Figures/TDR_boxplot_allDepths_allEvents.png")
 ```
-Alt-text for @fig-3: Three boxplots showing the depth distibution for shallow 
+Alt-text for @fig-3: Three boxplots showing the depth distribution for shallow 
 TDRs centers on 50 m, middle TDRs roughly 190 m, and deep TDRs 275 m.
 
 ::: {custom-style="Table Descriptive Text"}
