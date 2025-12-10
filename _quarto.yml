@@ -3,7 +3,7 @@ project:
 
 book: 
   page-navigation: true
-  title: "PIFSC Data Report Template" 
+  title: "Pilot data: deep-set longline temperature-depth recorders" 
   author:
     - name: Phoebe Woodworth-Jefcoats
       affiliations:
@@ -17,9 +17,7 @@ book:
     - index.qmd
     - ExecutiveSummary.qmd
     - MainBodyText.qmd
-    - LiteratureCited.qmd
     - References.qmd
-    - Appendix.qmd
     
 bibliography: references.bib
 csl: apa.csl

@@ -1,6 +1,30 @@
 # Executive Summary {.unnumbered}
 
-Write your Executive Summary here.  What makes for a good Executive Summary?  I'm
-honestly not sure, but I figure it's the most important points of your report,
-on a single page, and written so that it sticks in the mind of someone who's 
-very busy and not necessarily interested in the document.  Easier said than done.
+These data were collected as part of a Cooperative Research project was a 
+partnership between the Pacific Islands Fisheries Science Center (PIFSC), 
+the Hawaii Longline Association (HLA), Poseidon Fisheries Research (PFR), and 
+the captains and crew of the longline fishing vessels _Sea Hunt_ and _Marie M_. 
+The project goals were to determine the depths and temperatures at which 
+longline gear is fishing; collect stomachs from a subset of bigeye tuna, 
+mahimahi, and young-of-the-year swordfish; and record the lengths of fish from 
+which stomachs were collected. These data will be synthesized to provide a 
+better understanding of how deep-set gear is fishing as well as how local 
+oceanography and/or prey composition may affect fisheries catch.  
+
+This data report describes the temperature-depth recorder (TDR) data collected. 
+Data were collected from 24 trips over 12 months (October 2022 – September 
+2023). These 24 trips comprised roughly 325 sets spanning the full footprint of 
+Hawaiʻi’s deep-set longline fishery. Three TDRs were deployed per set and 
+spanned the depth range of the gear.  
+
+A primary conclusion of this work is that deep-set gear is being set shallower 
+than it has been in the past. As a result, gear is fishing at warmer 
+temperatures than bigeye tuna’s preferred daytime thermal habitat. As a result 
+of these results, and building on this project's success, the Pelagic Research 
+Program moved ahead with supplying TDRs to NOAA's Pacific Islands Regional 
+Observer Program (PIROP) for deployment across the deep-set fishery. This will 
+make it possible to determine whether these pilot data are representative of the 
+fleet as a whole. 
+
+Data collected through the ongoing TDR deployment in partnership with PIROP is 
+detailed in [data report reference here].
