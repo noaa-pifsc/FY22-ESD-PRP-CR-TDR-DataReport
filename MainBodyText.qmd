@@ -44,25 +44,74 @@ over 12 months (October 2022 - September 2023). These 24 trips comprised roughly
 325 sets spanning the full footprint of Hawaiʻi’s deep-set longline fishery 
 (@fig-1). Three TDRs were deployed per set, following the configuration in @fig-2.
 
-![](Figures/TDR_map_areaFished_allSets.png){#fig-1
-alt="A map of the area around the Main Hawaiian Islands, with a blue polygon 
-illustrating that fishing spanned from roughly 15-30N and 165-140W"}
-
-![](Figures/TDRgear_schematic.png){#fig-2 
-alt="An illustration of a boat with longline gear showing that TDRs were deployed
-after at least 10 floats and at the deepest, middle, and shallowest hook."}
-
-Testing something out with @fig-3
 ```{r}
 #| echo: false
-#| label: fig-3
+#| label: fig-1
+#| fig-cap: "Map with shaded area representing the area fished during the project."
+#| fig-alt: "A map of the area around the Main Hawaiian Islands, with a blue polygon illustrating that fishing spanned from roughly 15-30N and 165-140W"
+
+knitr::include_graphics("Figures/TDRgear_schematic.png")
+```
+Alt-text for @fig-1: A map of the area around the Main Hawaiian Islands, with a blue polygon 
+illustrating that fishing spanned from roughly 15-30N and 165-140W 
+
+```{r}
+#| echo: false
+#| label: fig-2
 #| fig-cap: "Schematic diagram provided to fishers to demonstrate where along longline gear TDRs should be attached."
 #| fig-alt: "An illustration of a boat with longline gear showing that TDRs were deployed after at least 10 floats and at the deepest, middle, and shallowest hook."
 
 knitr::include_graphics("Figures/TDRgear_schematic.png")
 ```
+Alt-text for @fig-2: An illustration of a boat with longline gear showing that 
+TDRs were deployed after at least 10 floats and at the deepest, middle, and 
+shallowest hook.  
 
 # Data summary
+A primary conclusion of this pilot project is that deep-set gear is being set 
+shallower than it has been in the past (@fig-3; @Bigelow2006). Average maximum 
+hook depth in our project was 235 m with the deepest set reaching 347 m, whereas 
+@Bigelow2006 recorded an average maximum hook depth of 244 m and maximum depth 
+of 504 m. Given this shallower depth, gear is fishing at warmer temperatures 
+than bigeye tuna’s preferred daytime thermal habitat of 8–14 °C (@fig-3; 
+@Howell2010. Here, too, our results demonstrate a change from that observed by 
+@Bigelow2006, who recorded an average minimum temperature of 12.6 °C and 
+absolute minimum of 6.1 °C. Our results show an average minimum temperature of 
+12.5 °C and an absolute minimum of 9.2 °C. Understanding the depths and 
+temperatures at which gear is fishing is crucial for determining how 
+oceanographic conditions affect both catch and ecosystem composition. It is also 
+essential for projecting climate impacts to our region’s most economically 
+valuable commercial fishery.
+
+```{r}
+#| echo: false
+#| label: fig-3 
+#| fig-cap: "Deepest recorded depths for each TDR (shallow, mid-point, deep) per set for 23 trips and 309 total sets*. Average deepest set depth was 56.9 m for the shallowest TDRs, 171 m for the mid-point TDRs, and 235 m with the deep TDRs."
+#| fig-alt: "Three boxplots showing the depth distibution for shallow TDRs centers on 50 m, middle TDRs roughly 190 m, and deep TDRs 275 m."
+
+knitr::include_graphics("Figures/TDR_boxplot_allDepths_allEvents.png")
+```
+Alt-text for @fig-3: Three boxplots showing the depth distibution for shallow 
+TDRs centers on 50 m, middle TDRs roughly 190 m, and deep TDRs 275 m.
+
+::: {custom-style="Table Descriptive Text"}
+\*One trip omitted from summary statistics due to erroneous TDR placement.
+:::
+
+```{r}
+#| echo: false
+#| label: fig-4
+#| fig-cap: "Maximum and minimum temperatures recorded from each TDR (shallow, mid-point, deep) per set for 23 trips and 309 total sets*."
+#| fig-alt: "Six boxplots showing the minimum and maximum temperature distributions range from roughly 15-25 C."
+
+knitr::include_graphics("Figures/TDR_boxplot_allTemps_allEvents.png")
+```
+Alt-text for @fig-4: Six boxplots showing the minimum and maximum temperature 
+distributions range from roughly 15-25 C.
+
+::: {custom-style="Table Descriptive Text"}
+\*One trip omitted from summary statistics due to erroneous TDR placement.
+:::
 
 # Next steps
 Based on the results of this work, the Pelagic Research Program in PIFSC's 
