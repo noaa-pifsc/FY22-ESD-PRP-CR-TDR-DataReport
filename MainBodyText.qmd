@@ -4,12 +4,75 @@ editor:
     wrap: 72
 ---
 
+```{r}
+#| echo: false
+#| message: false
+# Loading TDR data to pull some summary statistics.  Thanks to Johanna for 
+# making this easy to do!
+# One relevant file is big so I didn't put in the repo.  But, you can find it in
+# GUTSNGRAVY/CooperativeResearch/RAnalysis_TDR (or reconstruct it from the
+# archived data the code in the linked GitHub repo, apologies if you have to go
+# this route).
+# On my computer, it's in this project, in a folder named Data.
+
+# Set up workspace
+library(tidyverse)
+library(here)
+
+# Load data
+TDRs <- readRDS(here("Data", "TDRdata_allEvents_SetHaulRemoved.rds"))
+TDRsummaries <- readRDS(here("Data", "TDR_DepthTempSummaries.rds"))
+
+# Average minimum temp and max depth 
+# (making the assumption that the deepest TDR has the lowest temperaturs)
+avg_minT <- TDRsummaries |>
+  filter(GearPos == "deep") |>
+  summarise(avgMinTemp = mean(minTemp))
+
+avg_maxD <- TDRsummaries |>
+  filter(GearPos == "deep") |>
+  summarise(avgMaxDepth = mean(maxDepth))
+
+# Overall minimum temp and max depth across all obs
+minT_abs <- min(TDRs$Temp_C)
+maxD_abs <- max(TDRs$Depth_m)
+
+# Percent of obs outside preferred thermal habitat (we know none are below 8C 
+# from min_abs)
+abv14 <- TDRs |>
+  filter(Temp_C > 14)
+pct_abv14 <- dim(abv14)[1] / dim(TDRs)[1] * 100
+
+# Position-specific stats
+deepTDRs <- TDRs |>
+  filter(GearPos == "deep")
+deepTDRs_14 <- deepTDRs |> 
+  count(Temp_C > 14) |>
+  filter(`Temp_C > 14` == TRUE)
+deep_pct_abv14 <- deepTDRs_14$n / dim(deepTDRs)[1] * 100
+
+midTDRs<- TDRs |>
+  filter(GearPos == "mid")
+midTDRs_14 <- midTDRs |> 
+  count(Temp_C > 14) |>
+  filter(`Temp_C > 14` == TRUE)
+mid_pct_abv14 <- midTDRs_14$n / dim(midTDRs)[1] * 100
+
+shalTDRs<- TDRs |>
+  filter(GearPos == "shallow")
+shalTDRs_14 <- shalTDRs |> 
+  count(Temp_C > 14) |>
+  filter(`Temp_C > 14` == TRUE)
+shal_pct_abv14 <- shalTDRs_14$n / dim(shalTDRs)[1] * 100
+
+```
+
 # Background {.unnumbered}
 
 Recently, Hawaiʻi’s longliners have expressed concerns about fluctuations in 
 catch rates. Fish distribution, and in turn catch, is driven in part by ocean 
 temperatures. Understanding how temperature varies over space and time, and how
-this relates to the distribution and depth of fishing gear can help commercial 
+this relates to the distribution and depth of fishing gear, can help commercial 
 fishers better target their effort. However, these data are severely lacking 
 across the footprint of Hawaiʻi’s longline fishery. Without information on the 
 depths at which gear is fishing, it is impossible for PIFSC to thoroughly 
@@ -32,10 +95,10 @@ captains and crew of the longline fishing vessels _Sea Hunt_ and _Marie M_. The
 TDR data were collected in service of one of the project goals, which was to 
 determine the depths and temperatures at which longline gear is fishing.  
 
-# Methodology
+# Methodology {.unnumbered}
 Data were collected with Star-Oddi DST centi-ex temperature-depth recorders. 
 Sensors were deployed in a protective housing and clipped to the gear with a 
-wire clip.
+wire clip.  TDRs recorded at a 30-second resolution.
 
 Two vessels, _Sea Hunt_ and _Marie M_, were partnered with for the project 
 duration, which allowed for refining collection methods as well as consistency 
@@ -50,7 +113,7 @@ over 12 months (October 2022 - September 2023). These 24 trips comprised roughly
 #| fig-cap: "Map with shaded area representing the area fished during the project."
 #| fig-alt: "A map of the area around the Main Hawaiian Islands, with a blue polygon illustrating that fishing spanned from roughly 15-30N and 165-140W"
 
-knitr::include_graphics("Figures/TDRgear_schematic.png")
+knitr::include_graphics("Figures/TDR_map_areaFished_allSets.png")
 ```
 Alt-text for @fig-1: A map of the area around the Main Hawaiian Islands, with a blue polygon 
 illustrating that fishing spanned from roughly 15-30N and 165-140W 
@@ -67,26 +130,36 @@ Alt-text for @fig-2: An illustration of a boat with longline gear showing that
 TDRs were deployed after at least 10 floats and at the deepest, middle, and 
 shallowest hook.  
 
-# Data summary
+# Data summary {.unnumbered}
 A primary conclusion of this pilot project is that deep-set gear is being set 
 shallower than it has been in the past (@fig-3; @Bigelow2006). Average maximum 
-hook depth in our project was 235 m with the deepest set reaching 347 m, whereas 
-@Bigelow2006 recorded an average maximum hook depth of 244 m and maximum depth 
-of 504 m. Given this shallower depth, gear is fishing at warmer temperatures 
-than bigeye tuna’s preferred daytime thermal habitat of 8–14 °C (@fig-3; 
-@Howell2010. Here, too, our results demonstrate a change from that observed by 
+hook depth in our project was `r signif(avg_maxD$avgMaxDepth, 3)` m with the 
+deepest set reaching `r signif(maxD_abs, 3)` m, whereas @Bigelow2006 recorded an 
+average maximum hook depth of 244 m and maximum depth of 504 m. Given this 
+shallower depth, gear is fishing at warmer temperatures than bigeye tuna’s 
+preferred daytime thermal habitat of 8–14 °C (@fig-3; @Howell2010. Across all 
+TDR positions, after removing set and haul periods when gear was moving 
+vertically through the water column, `r signif(pct_abv14, 2)`% of observations 
+recorded temperatures > 14 °C where bigeye tuna may be less likely to be present. 
+Looking at specific TDR positions (@fig-2), nearly half 
+(`r signif(deep_pct_abv14, 2)`%) of all observations from the deepest TDRs were 
+above this thermal habitat threshold as were almost all mid-depth and shallow 
+TDR observation (`r signif(mid_pct_abv14, 3)`% and `r signif(shal_pct_abv14, 3)`%,
+respectively). Here, too, our results demonstrate a change from that observed by 
 @Bigelow2006, who recorded an average minimum temperature of 12.6 °C and 
 absolute minimum of 6.1 °C. Our results show an average minimum temperature of 
-12.5 °C and an absolute minimum of 9.2 °C. Understanding the depths and 
-temperatures at which gear is fishing is crucial for determining how 
-oceanographic conditions affect both catch and ecosystem composition. It is also 
-essential for projecting climate impacts to our region’s most economically 
-valuable commercial fishery.
+`r signif(avg_minT$avgMinTemp, 3)` °C and an absolute minimum of 
+`r signif(minT_abs, 2)` °C. 
+
+Understanding the depths and temperatures at which gear is fishing is crucial 
+for determining how oceanographic conditions affect both catch and ecosystem 
+composition. It is also essential for projecting climate impacts to our region’s 
+most economically valuable commercial fishery.
 
 ```{r}
 #| echo: false
 #| label: fig-3 
-#| fig-cap: "Deepest recorded depths for each TDR (shallow, mid-point, deep) per set for 23 trips and 309 total sets*. Average deepest set depth was 56.9 m for the shallowest TDRs, 171 m for the mid-point TDRs, and 235 m with the deep TDRs."
+#| fig-cap: "Deepest recorded depths for each TDR (shallow, mid-point, deep) per set for 23 trips and 309 total sets*."
 #| fig-alt: "Three boxplots showing the depth distibution for shallow TDRs centers on 50 m, middle TDRs roughly 190 m, and deep TDRs 275 m."
 
 knitr::include_graphics("Figures/TDR_boxplot_allDepths_allEvents.png")
@@ -113,9 +186,9 @@ distributions range from roughly 15-25 C.
 \*One trip omitted from summary statistics due to erroneous TDR placement.
 :::
 
-# Next steps
+# Next steps {.unnumbered}
 Based on the results of this work, the Pelagic Research Program in PIFSC's 
-Ecosystem Sciencies Division is partnering with the Pacific Islands Regional 
-Observer Program (PIROP) to conduct TDR sampling cross the deep- and shallow-
+Ecosystem Sciences Division is partnering with the Pacific Islands Regional 
+Observer Program (PIROP) to conduct TDR sampling across the deep- and shallow-
 set fisheries. These data are described in [data report reference here].
 
