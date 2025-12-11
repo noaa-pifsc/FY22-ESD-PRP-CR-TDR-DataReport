@@ -1,15 +1,11 @@
 # Executive Summary {.unnumbered}
 
-These data were collected as part of a Cooperative Research project was a 
+These data were collected as part of a Cooperative Research 
 partnership between the Pacific Islands Fisheries Science Center (PIFSC), 
 the Hawaii Longline Association (HLA), Poseidon Fisheries Research (PFR), and 
 the captains and crew of the longline fishing vessels _Sea Hunt_ and _Marie M_. 
-The project goals were to determine the depths and temperatures at which 
-longline gear is fishing; collect stomachs from a subset of bigeye tuna, 
-mahimahi, and young-of-the-year swordfish; and record the lengths of fish from 
-which stomachs were collected. These data will be synthesized to provide a 
-better understanding of how deep-set gear is fishing as well as how local 
-oceanography and/or prey composition may affect fisheries catch.  
+One of the project goals was to determine the depths and temperatures at which 
+longline gear is fishing. 
 
 This data report describes the temperature-depth recorder (TDR) data collected. 
 Data were collected from 24 trips over 12 months (October 2022 – September 
