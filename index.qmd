@@ -196,7 +196,8 @@ to generate data report figures and summary statistics is publicly available on
 GitHub at: <https://github.com/JohannaWren/CooperativeResearchTDR>.
  
 The data covered in this publication are publicly accessible and archived at: 
-<insert NCEI URL here>. Metadata can be found at <https://www.fisheries.noaa.gov/inport/item/75984>.  
+<https://doi.org/10.25921/3fe7-nj17>. Metadata can be found at 
+<https://www.fisheries.noaa.gov/inport/item/75984>.  
 
 **Copies of this report are available from**
 
