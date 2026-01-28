@@ -67,7 +67,7 @@ National Marine Fisheries Service\
 1845 Wasp Boulevard\
 Honolulu, HI 96818
 
-^2^ Cooperative Institute for Marine andAtmospheric Research\
+^2^ Cooperative Institute for Marine and Atmospheric Research\
 University of Hawaii\
 1000 Pope Road\
 Honolulu, HI 96822
