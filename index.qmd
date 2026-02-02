@@ -60,7 +60,8 @@ ReportTitle <- c("Pilot data: deep-set longline temperature-depth recorders")
 
 Phoebe Woodworth-Jefcoats^1^^[ORCiD](https://orcid.org/0000-0001-9353-923X)^, 
 Johanna L. K. Wren^1^^[ORCiD](https://orcid.org/0000-0002-5014-8105)^, 
-Nan S. Himmelsbach^1,2^^[ORCiD](https://orcid.org/0000-0002-2317-6354)^, Author four^3^
+Nan S. Himmelsbach^1,2^^[ORCiD](https://orcid.org/0000-0002-2317-6354)^, 
+Donald RR. Kobayashi^1^^[ORCiD](https://orcid.org/0000-0002-1582-1544)^, Author five^3^
 
 ^1^ Pacific Islands Fisheries Science Center\
 National Marine Fisheries Service\
