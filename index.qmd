@@ -59,9 +59,9 @@ ReportTitle <- c("Pilot data: deep-set longline temperature-depth recorders")
 :::
 
 Phoebe Woodworth-Jefcoats^1^^[ORCiD](https://orcid.org/0000-0001-9353-923X)^, 
-Johanna L. K. Wren^1^^[ORCiD](https://orcid.org/0000-0002-5014-8105)^, 
 Nan S. Himmelsbach^1,2^^[ORCiD](https://orcid.org/0000-0002-2317-6354)^, 
-Donald RR. Kobayashi^1^^[ORCiD](https://orcid.org/0000-0002-1582-1544)^, Author five^3^
+Johanna L. K. Wren^1^^[ORCiD](https://orcid.org/0000-0002-5014-8105)^, 
+Donald R. Kobayashi^1^^[ORCiD](https://orcid.org/0000-0002-1582-1544)^
 
 ^1^ Pacific Islands Fisheries Science Center\
 National Marine Fisheries Service\
@@ -72,11 +72,6 @@ Honolulu, HI 96818
 University of Hawaii\
 1000 Pope Road\
 Honolulu, HI 96822
-
-^3^ Other affiliation\
-Parent organization\
-12345 Name Street\
-City, ST 12345
 
 \
 
@@ -100,13 +95,13 @@ Pacific Islands Fisheries Science Center
 #| echo: false
 # This code chunk creates some strings that will autofill the document front 
 # matter below.
-CoverPhotoDesc <- c("Replace this text with a brief description of the cover photo")
+# CoverPhotoDesc <- c("Replace this text with a brief description of the cover photo")
 
-CoverPhotographer <- c("Either note the cover photo photograper here or delete this entire line of code")
+# CoverPhotographer <- c("Either note the cover photo photograper here or delete this entire line of code")
 # Note: if you delete the above line about the CoverPhotographer, you should also delete reference
 # to it in the cover photo credit a few lines down from here.
 
-ReportAuthors <- c("Replace this text with the authors using the format of Doe J.S., Smith C.R.")
+ReportAuthors <- c("Woodworth-Jefcoats, P., Himmelsbach, N.S., Wren, J.L.K., Kobayashi D.R.")
 ```
 
 **Acknowledgements**  
@@ -117,9 +112,6 @@ _Marie M_ for partnering with us in this work.
 Mention throughout this document to trade names or commercial companies is for 
 identification purposes only and does not imply endorsement by the National 
 Marine Fisheries Service, NOAA.
-
-Cover photo: \[`r CoverPhotoDesc`\]. Photo Credit: NOAA Fisheries. Photographer: `r CoverPhotographer`.  
-
 
 Edited by \[First name\]\[Last name\]
 
